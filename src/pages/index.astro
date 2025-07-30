@@ -1,0 +1,38 @@
+---
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+---
+
+<Layout>
+  <main>
+    <section class="w-flex mx-auto lg:w-[740px] py-44">
+      <img
+        class="rounded-full w-12 h-12"
+        src="https://avatars.githubusercontent.com/u/84538965?u=26fdb8c39c7989454f697328d4712c4f8b0d484e&v=4"
+        alt="gino photo"
+      />
+
+      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
+        Welcome to My Portfolio <a
+          href="https://www.linkedin.com/in/ginolencina/"
+          target="_black"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class="text-xl opacity-80 text-wrap">Lorem ipsum dolor sit</h2>
+      <span class="text-yellow-200/90">
+        amet consectetur adipisicing elit.</span
+      >
+      <span class="text-red-200/90">
+        Itaque autem modi veniam ea! Velit odit vitae,</span
+      > similique illo necessitatibus blanditiis atque ratione quisquam magnam hic,
+      <span class="opacity-85">sed, commodi vel dignissimos possimus?</span>
+    </section>
+
+    <ul></ul>
+  </main>
+</Layout>
