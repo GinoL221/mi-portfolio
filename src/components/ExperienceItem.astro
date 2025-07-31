@@ -1,12 +1,13 @@
 ---
 export interface Propst {
   title: string;
-  description: string;
   date: string;
+  company: string;
+  description: string;
   link?: string;
 }
 
-const { title, description, date, link } = Astro.props;
+const { title, description, date, link, company } = Astro.props;
 ---
 
 <div
@@ -20,7 +21,7 @@ const { title, description, date, link } = Astro.props;
 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
   {title}
 </h3>
-<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 text-pretty">
   {description}
 </p>
 {
@@ -29,7 +30,7 @@ const { title, description, date, link } = Astro.props;
       href={link}
       class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
     >
-      Saber más... {" "}
+      Saber más...{" "}
       <svg
         class="w-3 h-3 ms-2 rtl:rotate-180"
         aria-hidden="true"
