@@ -1,13 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import SocialPill from "../components/SocialPill.astro";
+
 import LinkedInIcon from "../icons/LinkedIn.astro";
 import GitHubIcon from "../icons/GitHub.astro";
 import EmailIcon from "../icons/Email.astro";
-import Experience from "../components/Experience.astro";
 import BriefcaseIcon from "../icons/Briefcase.astro";
+
+import SectionContainer from "../components/SectionContainer.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
 ---
 
 <Layout
@@ -15,7 +17,7 @@ import BriefcaseIcon from "../icons/Briefcase.astro";
   description="Portfolio de Gino Lencina, programador y desarrollador web. Aquí encontrarás mis proyectos, habilidades y formas de contacto."
 >
   <main>
-    <SectionContainer class="py-44 pb-24 ">
+    <SectionContainer class="py-44 pb-24">
       <img
         class="rounded-full size-12"
         src="https://avatars.githubusercontent.com/u/84538965?u=26fdb8c39c7989454f697328d4712c4f8b0d484e&v=4"
@@ -61,7 +63,7 @@ import BriefcaseIcon from "../icons/Briefcase.astro";
     <SectionContainer id="experience">
       <h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
         <BriefcaseIcon class="size-7" />
-        Experiencia Laboral 
+        Experiencia Laboral
       </h2>
       <Experience />
     </SectionContainer>
