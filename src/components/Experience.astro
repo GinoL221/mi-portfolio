@@ -4,7 +4,15 @@ import ExperienceItem from "../components/ExperienceItem.astro";
 const EXPERIENCE = [
   {
     title: "Mi experiencia",
-    date: "none",
+    date: "2025",
+    company: "Mi Empresa",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque autem modi veniam ea! Velit odit vitae, similique illo necessitatibus blanditiis atque ratione quisquam magnam hic, sed, commodi vel dignissimos possimus?",
+    link: "experince-link",
+  },
+  {
+    title: "Mi experiencia",
+    date: "2024",
     company: "Mi Empresa",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque autem modi veniam ea! Velit odit vitae, similique illo necessitatibus blanditiis atque ratione quisquam magnam hic, sed, commodi vel dignissimos possimus?",
@@ -13,7 +21,7 @@ const EXPERIENCE = [
 ];
 ---
 
-<ol class="relative border-s border-gray-200 dark:border-gray-700">
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3.5">
   {
     EXPERIENCE.map((experience) => (
       <li class="mb-10 ms-4">
