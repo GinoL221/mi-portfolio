@@ -1,0 +1,67 @@
+---
+const personalImageAlt = "Gino Lencina";
+
+import Badge from "./Badge.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import EmailIcon from "../icons/Email.astro";
+import SocialPill from "./SocialPill.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+---
+
+<div class="flex flex-col gap-y-2">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full size-12"
+      src="https://avatars.githubusercontent.com/u/84538965?u=26fdb8c39c7989454f697328d4712c4f8b0d484e&v=4"
+      alt={personalImageAlt}
+    />
+
+    <h1
+      class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 text-pretty"
+    >
+      Bienvenido a mi Portfolio <a
+        href="https://www.linkedin.com/in/ginolencina/"
+        target="_black"
+        rel="noopener"
+        class="flex justify-center items-center"
+      >
+        <Badge>Disponible para trabajar</Badge>
+      </a>
+    </h1>
+  </div>
+
+  <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+    Desarrollador Web Full Stack Jr con enfoque en soluciones escalables y
+    eficientes.
+  </h2>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    <span class="text-yellow-200/90">
+      Me especializo en tecnologías como Java, Spring Boot, React y Node.js.</span
+    >
+    <span class="text-red-200/90">
+      He desarrollado proyectos funcionales durante mi formación, aplicando
+      buenas prácticas, arquitectura MVC y metodologías ágiles.</span
+    >
+    <span class="opacity-85">
+      Actualmente me encuentro en búsqueda activa de oportunidades para seguir
+      creciendo profesionalmente.</span
+    >
+  </p>
+
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="https://www.linkedin.com/in/ginolencina/">
+      <LinkedInIcon class="size-4 md:size-6" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/GinoL221">
+      <GitHubIcon class="size-4 md:size-6" />
+      GitHub
+    </SocialPill>
+    <SocialPill href="mailto:ginolencina@gmail.com">
+      <EmailIcon class="size-4 md:size-6" />
+      ginolencina@gmail.com
+    </SocialPill>
+  </nav>
+</div>
