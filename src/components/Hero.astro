@@ -1,0 +1,53 @@
+---
+import Badge from "@/components/Badge.astro";
+import SocialPill from "@/components/SocialPill.astro";
+
+import GitHubIcon from "@/icons/GitHubIcon.astro";
+import EmailIcon from "@/icons/EmailIcon.astro";
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full size-12"
+      src="/public/img/me.jpeg"
+      alt="gino-photo"
+    />
+    <a
+      href="https://www.linkedin.com/in/ginolencina/"
+      target="_blank"
+      rel="noopener"
+      class="flex justify-center items-center"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hola, soy Gino 👨🏻‍💻
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    <strong>Desarrollador Web Full Stack</strong> de San Miguel, Buenos Aires, Argentina.
+    Experiencia práctica creando aplicaciones web con
+    <strong>Java, Spring Boot, React y Node.js</strong>. Apasionado por el
+    aprendizaje continuo y el desarrollo de
+    <strong
+      >proyectos escalables y centrados en la experiencia de usuario</strong
+    >.
+  </p>
+</div>
+
+<nav class="flex gap-4 mt-8 flex-wrap">
+  <SocialPill href="https://github.com/GinoL221">
+    <GitHubIcon class="size-4 md:size-6" />
+    GitHub
+  </SocialPill>
+  <SocialPill href="mailto:ginolencina@gmail.com">
+    <EmailIcon class="size-4 md:size-6" />
+    ginolencina@gmail.com
+  </SocialPill>
+</nav>

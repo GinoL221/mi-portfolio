@@ -12,7 +12,7 @@
     "@fontsource-variable/onest": "^5.2.9",
     "@fontsource/twinkle-star": "^5.2.6",
     "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.12.5",
+    "astro": "^5.13.9",
     "tailwindcss": "^4.1.11"
   }
 }
