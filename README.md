@@ -1,46 +1,40 @@
-# Astro Starter Kit: Basics
+# 🌐 Portfolio - Gino Lencina
 
-```sh
-npm create astro@latest -- --template basics
-```
+Bienvenido a mi portafolio persona.  
+Este sitio está diseñado para mostrar mis proyectos, habilidades y trayectoria como **Desarrollador Web Full Stack**.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📋 Descripción
 
-## 🚀 Project Structure
+El portfolio está construido con un enfoque moderno, priorizando el rendimiento, la accesibilidad y la experiencia de usuario.  
+En él vas a encontrar una selección de mis proyectos destacados, mi perfil profesional y enlaces de contacto.
 
-Inside of your Astro project, you'll see the following folders and files:
+🔗 **Demo online**: [Ver Portfolio](https://tu-dominio.netlify.app)
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## 🛠️ Tecnologías utilizadas
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- ⚡ [Astro](https://astro.build/) — Framework estático rápido y flexible  
+- 🎨 [Tailwind CSS](https://tailwindcss.com/) — Estilos utilitarios y responsive  
+- ⚛️ [React](https://react.dev/) — Componentes dinámicos  
+- ☁️ Despliegue en [Netlify](https://www.netlify.com/)
 
-## 🧞 Commands
+## 📂 Secciones
 
-All commands are run from the root of the project, from a terminal:
+- **Inicio** → Presentación y disponibilidad laboral  
+- **Sobre mí** → Perfil profesional y formación  
+- **Proyectos** → Listado de mis proyectos destacados con enlaces a GitHub y demos  
+- **Contacto** → Links a mis redes y email  
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🚀 Proyectos destacados en el portfolio
 
-## 👀 Want to learn more?
+- 🦷 **[Dental Clinic](https://github.com/GinoL221/Clinica-Dental-MVC)** — Sistema de gestión de clínica dental (Java, Spring Boot, React, MySQL, JWT).  
+- 🎬 **[Movies App](https://github.com/GinoL221/movies-app)** — Aplicación en React que consume una API pública de películas.  
+- 🎧 **[Spotify Clone](https://github.com/GinoL221/spotify-clone)** — Clon visual de Spotify con reproducción de audio (Astro + React).  
+- 🛒 **[Mercado Liebre](https://github.com/GinoL221/Mercado_Liebre)** — Ecommerce inicial con HTML, CSS y JS.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📫 Contacto
+
+- 📧 Email: **<ginolencina@gmail.com>**  
+- 💼 LinkedIn: [linkedin.com/in/ginolencina](https://www.linkedin.com/in/ginolencina/)  
+- 🐙 GitHub: [github.com/GinoL221](https://github.com/GinoL221)
+
+---
