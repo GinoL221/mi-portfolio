@@ -8,7 +8,7 @@ Este sitio está diseñado para mostrar mis proyectos, habilidades y trayectoria
 El portfolio está construido con un enfoque moderno, priorizando el rendimiento, la accesibilidad y la experiencia de usuario.  
 En él vas a encontrar una selección de mis proyectos destacados, mi perfil profesional y enlaces de contacto.
 
-🔗 **Demo online**: [Ver Portfolio](https://tu-dominio.netlify.app)
+🔗 **Demo online**: [Ver Portfolio](https://portfolio-ginolencina.netlify.app/)
 
 ## 🛠️ Tecnologías utilizadas
 
@@ -35,6 +35,5 @@ En él vas a encontrar una selección de mis proyectos destacados, mi perfil pro
 
 - 📧 Email: **<ginolencina@gmail.com>**  
 - 💼 LinkedIn: [linkedin.com/in/ginolencina](https://www.linkedin.com/in/ginolencina/)  
-- 🐙 GitHub: [github.com/GinoL221](https://github.com/GinoL221)
 
 ---
