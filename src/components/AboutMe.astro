@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import meImage from "@/assets/me.jpeg";
+---
+
 <article
   class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
 >
@@ -6,35 +11,32 @@
   >
     <p>
       Soy <strong>Gino Lencina</strong>, Desarrollador Web Full Stack orientado
-      a la construcción de aplicaciones modernas y escalables. Me formé en
-      <strong>Universidad de General Sarmiento</strong>, <strong
-        >Digital House</strong
-      > y en el programa <strong>Certified Tech Developer</strong>, donde
-      trabajé con tecnologías como Java, Spring Boot, React, Node.js y MySQL.
+      a la construcción de aplicaciones modernas y escalables. Me formé en la
+      <strong>Universidad de General Sarmiento</strong>, <strong>Digital House</strong> 
+      y completé el programa <strong>Certified Tech Developer</strong>, especializándome en 
+      tecnologías core como <strong>Java, Spring Boot, React, Node.js y MySQL</strong>.
     </p>
 
     <p>
-      He desarrollado proyectos que abarcan desde <strong
-        >plataformas de ecommerce</strong
-      >
-      (Mundo 3D), <strong>gestión de clínicas</strong> (Clínica Dental MVC) hasta
-      sitios web enfocados en <strong>experiencias visuales</strong> (Mercado Liebre
-      y clon de Spotify). Estos proyectos me permitieron poner en práctica arquitecturas
-      como MVC, REST APIs y el uso de JWT para autenticación.
+      Mi experiencia abarca desde el desarrollo de <strong>REST APIs con arquitecturas MVC</strong> 
+      hasta la creación de interfaces dinámicas y responsivas. He liderado proyectos como 
+      una <strong>Plataforma de Ecommerce</strong> y un <strong>Sistema de Gestión de Clínicas Dentales</strong>, 
+      donde implementé seguridad robusta mediante <strong>Spring Security y JWT</strong>.
     </p>
 
     <p>
-      Me interesa seguir creciendo en entornos colaborativos, aplicando
-      metodologías ágiles como <strong>Scrum</strong> y aportando soluciones que
-      mejoren la experiencia del usuario final. Mi objetivo es seguir especializándome
-      como Full Stack Developer y aportar valor en equipos dinámicos.
+      Me apasiona resolver problemas complejos mediante el uso de <strong>patrones de diseño</strong> 
+      y metodologías ágiles como <strong>Scrum</strong>. Mi objetivo es integrarme en equipos 
+      de alto rendimiento donde pueda aportar valor técnico y seguir evolucionando como 
+      <strong>Full Stack Developer</strong>.
     </p>
   </div>
 
-  <img
+  <Image
     width="200"
     height="200"
-    src="/img/me.jpeg"
+    src={meImage}
+    alt="Gino Lencina"
     class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
     style="object-position: 50% 50%"
   />

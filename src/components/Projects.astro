@@ -1,176 +1,85 @@
 ---
-import NextJSIcon from "@/icons/NextJSIcon.astro";
-import Astroicon from "@/icons/AstroIcon.astro";
-import TailwindCSSIcon from "@/icons/TailwindCSSIcon.astro";
-import JavaScriptIcon from "@/icons/JavaScriptIcon.astro";
-import ReactIcon from "@/icons/ReactIcon.astro";
-import JavaIcon from "@/icons/JavaIcon.astro";
-import SpringBootIcon from "@/icons/SpringBootIcon.astro";
-import MySQLIcon from "@/icons/MySQLIcon.astro";
-import JWTIcon from "@/icons/JWTIcon.astro";
-import CSSIcon from "@/icons/CSSIcon.astro";
+import { Image } from "astro:assets";
+import GitHubIcon from "@/icons/GitHubIcon.astro";
+import LinkIcon from "@/icons/LinkIcon.astro";
+import { PROJECTS } from "../data/projects";
 
-const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJSIcon,
-  },
-  ASTRO: {
-    name: "Astro",
-    class: "bg-black text-white",
-    icon: Astroicon,
-  },
-  TAILWINDCSS: {
-    name: "Tailwind CSS",
-    class: "bg-blue-500 text-white",
-    icon: TailwindCSSIcon,
-  },
-  JAVASCRIPT: {
-    name: "JavaScript",
-    class: "bg-yellow-500 text-black",
-    icon: JavaScriptIcon,
-  },
-  REACT: {
-    name: "React",
-    class: "bg-blue-400 text-white",
-    icon: ReactIcon,
-  },
-  JAVA: {
-    name: "Java",
-    class: "bg-red-600 text-white",
-    icon: JavaIcon,
-  },
-  SPRINGBOOT: {
-    name: "Spring Boot",
-    class: "bg-green-600 text-white",
-    icon: SpringBootIcon,
-  },
-  MYSQL: {
-    name: "MySQL",
-    class: "bg-blue-800 text-white",
-    icon: MySQLIcon,
-  },
-  JWT: {
-    name: "JWT",
-    class: "bg-yellow-300 text-black",
-    icon: JWTIcon,
-  },
-  CSS: {
-    name: "CSS",
-    class: "bg-blue-600 text-white",
-    icon: CSSIcon,
-  },
-};
-
-const PROJECTS = [
-  {
-    title: "Dental Clinic",
-    description:
-      "Sistema web full stack para la gestión de una clínica dental. El backend está desarrollado en Java con Spring Boot, implementando arquitectura MVC, DTOs, Spring Security y JWT para autenticación. La base de datos se gestiona con MySQL, incluyendo entidades como pacientes, odontólogos y turnos. El frontend en React permite la interacción de los usuarios mediante formularios, listado de turnos y validaciones. Actualmente en fase final de pruebas, corrección de bugs y testeo.",
-    link: "https://tu-dominio-dental.example",
-    github: "https://github.com/GinoL221/Clinica-Dental-MVC",
-    image: "/img/home-dental-clinic.webp",
-    tags: [TAGS.JAVA, TAGS.SPRINGBOOT, TAGS.REACT, TAGS.MYSQL, TAGS.JWT],
-    status: "En pruebas",
-  },
-  {
-    title: "Movies App",
-    description:
-      "App que consume una API pública: destacados, recomendaciones, búsqueda y trailers. Frontend completo y probado manualmente.",
-    link: "https://peliradar.netlify.app/",
-    github: "https://github.com/GinoL221/Buscador_Peliculas",
-    image: "/img/movies-app.webp",
-    tags: [TAGS.REACT, TAGS.JAVASCRIPT],
-    status: "Completo",
-  },
-  {
-    title: "Spotify Clone",
-    description:
-      "Clon visual y funcional parcial desarrollado con Astro + React. Enfocado en rendimiento y UX responsive.",
-    link: "https://stremingmusic.netlify.app/",
-    github: "https://github.com/GinoL221/spotify-clone",
-    image: "/img/spotify-clone.webp",
-    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.JAVASCRIPT],
-    status: "Completo",
-  },
-  {
-    title: "Mercado Liebre",
-    description:
-      "Proyecto inicial de ecommerce, inspirado en Mercado Libre. Construido con HTML, CSS y JavaScript para practicar maquetación, estilos y estructura de un sitio responsive. Incluye páginas de productos, login y carrito simulado.",
-    link: "https://super-jelly-27eda1.netlify.app/",
-    github: "https://github.com/GinoL221/Mercado_Liebre",
-    image: "/img/mercado-liebre-app.webp",
-    tags: [TAGS.JAVASCRIPT, TAGS.CSS],
-    status: "Completo",
-  },
-];
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/projects/*.{jpeg,jpg,png,gif,webp}"
+);
 ---
 
-{
-  PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="mb-16 last:mb-0 flex flex-col gap-y-4">
-      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row">
-        {tags.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-1`}
-            >
-              <tag.icon class=" size-4 mr-2" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10"
-        src={image}
-        alt={`Captura de pantalla de ${title}`}
-      />
-      <a
-        href={link}
-        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-      >
-        Sitio Web{" "}
-        <svg
-          class="w-3 h-3 ms-2 rtl:rotate-180"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
-      </a>
-      <a
-        href={github}
-        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-      >
-        Código Fuente{" "}
-        <svg
-          class="w-3 h-3 ms-2 rtl:rotate-180"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
-      </a>
-    </article>
-  ))
-}
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => {
+      const imagePath = `/src/assets/projects/${image}`;
+      if (!images[imagePath]) {
+        throw new Error(
+          `"${imagePath}" does not exist in glob: "src/assets/projects/*.{jpeg,jpg,png,gif,webp}"`
+        );
+      }
+
+      return (
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+              {title}
+            </h3>
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    >
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-2 text-gray-700 dark:text-gray-400 text-pretty">
+                {description}
+              </div>
+              <footer class="flex items-end justify-start mt-4 gap-x-4">
+                {github && (
+                  <a
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm text-gray-800 transition bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700"
+                  >
+                    <GitHubIcon class="size-6" />
+                    Código
+                  </a>
+                )}
+                {link && (
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm text-gray-800 transition bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700"
+                  >
+                    <LinkIcon class="size-4" />
+                    Sitio Web
+                  </a>
+                )}
+              </footer>
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/2">
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              <Image
+                alt={`Captura de pantalla de ${title}`}
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-100"
+                src={images[imagePath]()}
+              />
+            </div>
+          </div>
+        </article>
+      );
+    })
+  }
+</div>

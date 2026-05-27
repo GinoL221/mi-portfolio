@@ -1,17 +1,21 @@
 ---
+import { Image } from "astro:assets";
+import meImage from "@/assets/me.jpeg";
 import Badge from "@/components/Badge.astro";
 import SocialPill from "@/components/SocialPill.astro";
 
 import GitHubIcon from "@/icons/GitHubIcon.astro";
 import EmailIcon from "@/icons/EmailIcon.astro";
+import LinkedInIcon from "@/icons/LinkedInIcon.astro";
 ---
 
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
-    <img
-      class="rounded-full size-12"
-      src="/img/me.jpeg"
-      alt="gino-photo"
+    <Image
+      class="rounded-full size-16 object-cover"
+      src={meImage}
+      alt="Gino Lencina"
+      loading="eager"
     />
     <a
       href="https://www.linkedin.com/in/ginolencina/"
@@ -26,22 +30,22 @@ import EmailIcon from "@/icons/EmailIcon.astro";
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    Hola, soy Gino 👨🏻‍💻
+    Gino Lencina | Full Stack Developer
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    <strong>Desarrollador Web Full Stack</strong> de San Miguel, Buenos Aires, Argentina.
-    Experiencia práctica creando aplicaciones web con
-    <strong>Java, Spring Boot, React y Node.js</strong>. Apasionado por el
-    aprendizaje continuo y el desarrollo de
-    <strong
-      >proyectos escalables y centrados en la experiencia de usuario</strong
-    >.
+    <strong>Especialista en Java, Spring Boot y React</strong> de San Miguel, Buenos Aires, Argentina.
+    Enfocado en el desarrollo de aplicaciones web escalables, seguras y centradas en la experiencia del usuario (UX). 
+    Apasionado por la arquitectura limpia y la optimización de procesos.
   </p>
 </div>
 
 <nav class="flex gap-4 mt-8 flex-wrap">
+  <SocialPill href="https://www.linkedin.com/in/ginolencina/">
+    <LinkedInIcon class="size-4 md:size-6" />
+    LinkedIn
+  </SocialPill>
   <SocialPill href="https://github.com/GinoL221">
     <GitHubIcon class="size-4 md:size-6" />
     GitHub
