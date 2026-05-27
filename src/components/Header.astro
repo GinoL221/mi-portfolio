@@ -1,16 +1,16 @@
 ---
-/*
-  {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experience",
-  },
-*/
+import { SITE_EMAIL } from "@/data/site";
+
 const navItems = [
   {
     title: "Inicio",
     label: "inicio",
-    url: "/#",
+    url: "/",
+  },
+  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
   },
   {
     title: "Proyectos",
@@ -25,7 +25,7 @@ const navItems = [
   {
     title: "Contacto",
     label: "contacto",
-    url: "mailto:ginolencina@gmail.com",
+    url: `mailto:${SITE_EMAIL}`,
   },
 ];
 ---
@@ -55,7 +55,7 @@ const navItems = [
     const sections = document.querySelectorAll("section");
     const navItems = document.querySelectorAll("header nav a");
 
-    const callback = (entries: any[]) => {
+    const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
