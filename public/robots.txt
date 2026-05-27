@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ginolencina-dev.netlify.app/sitemap-index.xml

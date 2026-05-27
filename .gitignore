@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # netlify settings folder
 .netlify/
+
+# SDD skill registry artifacts
+.atl/
