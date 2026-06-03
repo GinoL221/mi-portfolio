@@ -11,6 +11,9 @@ import AboutMe from "@/components/AboutMe.astro";
 import ProfileCheck from "@/icons/ProfileCheckIcon.astro";
 import BriefcaseIcon from "@/icons/BriefcaseIcon.astro";
 import CodeIcon from "@/icons/CodeIcon.astro";
+import AwardIcon from "@/icons/AwardIcon.astro";
+
+import Certifications from "@/components/Certifications.astro";
 ---
 
 <Layout
@@ -28,6 +31,14 @@ import CodeIcon from "@/icons/CodeIcon.astro";
         Experiencia Laboral
       </h2>
       <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="certificaciones">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <AwardIcon class="size-7" />
+        Certificaciones
+      </h2>
+      <Certifications />
     </SectionContainer>
 
     <SectionContainer id="projects" class="pb-16 md:pb-36">

@@ -31,3 +31,6 @@ pnpm-debug.log*
 
 # SDD skill registry artifacts
 .atl/
+
+# certificate files (hosted externally)
+certificados/
