@@ -1,0 +1,108 @@
+---
+import { Image } from "astro:assets";
+import GitHubIcon from "@/icons/GitHubIcon.astro";
+import LinkIcon from "@/icons/LinkIcon.astro";
+import type { Project } from "@/data/projects";
+
+export interface Props {
+  project: Project;
+  heroImage: () => Promise<{ default: ImageMetadata }>;
+}
+
+const { project, heroImage } = Astro.props;
+const { title, github, link, tags, caseStudy } = project;
+---
+
+<article class="flex flex-col gap-y-12">
+  <!-- Header -->
+  <header class="flex flex-col gap-y-4">
+    <div class="flex flex-wrap gap-x-2">
+      {
+        tags.map((tag) => (
+          <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+            <tag.icon class="size-4" />
+            {tag.name}
+          </span>
+        ))
+      }
+    </div>
+    <h1 class="text-4xl font-bold text-gray-800 dark:text-gray-100">{title}</h1>
+    {
+      caseStudy && (
+        <p class="text-xl text-gray-600 dark:text-gray-400 text-pretty">
+          {caseStudy.tagline}
+        </p>
+      )
+    }
+    <footer class="flex gap-x-4">
+      {
+        github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm text-gray-800 transition bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700"
+          >
+            <GitHubIcon class="size-6" />
+            Código
+          </a>
+        )
+      }
+      {
+        link && link !== github && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm text-gray-800 transition bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700"
+          >
+            <LinkIcon class="size-4" />
+            Sitio Web
+          </a>
+        )
+      }
+    </footer>
+  </header>
+
+  <!-- Hero image -->
+  <div class="overflow-clip rounded-xl shadow-xl lg:border lg:border-gray-800">
+    <Image
+      alt={`Captura de pantalla de ${title}`}
+      class="object-cover object-top w-full"
+      src={heroImage()}
+    />
+  </div>
+
+  <!-- Metrics strip -->
+  {
+    caseStudy && caseStudy.metrics.length > 0 && (
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {caseStudy.metrics.map(({ label, value }) => (
+          <div class="flex flex-col items-center gap-y-1 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
+            <span class="text-3xl font-bold text-yellow-400 dark:text-yellow-300">
+              {value}
+            </span>
+            <span class="text-xs text-gray-500 dark:text-gray-400">{label}</span>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  <!-- Narrative sections -->
+  {
+    caseStudy &&
+      caseStudy.sections.map(({ heading, body }) => (
+        <section class="flex flex-col gap-y-4">
+          <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-100">
+            {heading}
+          </h2>
+          {body.map((paragraph) => (
+            <p class="text-gray-700 dark:text-gray-400 text-pretty leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+        </section>
+      ))
+  }
+</article>
