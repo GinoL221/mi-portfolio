@@ -8,6 +8,44 @@ import SpringBootIcon from "@/icons/SpringBootIcon.astro";
 import MySQLIcon from "@/icons/MySQLIcon.astro";
 import JWTIcon from "@/icons/JWTIcon.astro";
 import CSSIcon from "@/icons/CSSIcon.astro";
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+// --- Interfaces ---
+
+export interface CaseStudyMetric {
+  label: string;
+  value: string;
+}
+
+export interface CaseStudySection {
+  heading: string;
+  body: string[];
+}
+
+export interface CaseStudy {
+  slug: string;
+  tagline: string;
+  sections: CaseStudySection[];
+  metrics: CaseStudyMetric[];
+}
+
+export interface Tag {
+  name: string;
+  class: string;
+  icon: AstroComponentFactory;
+}
+
+export interface Project {
+  title: string;
+  description: string;
+  link: string;
+  github: string;
+  image: string;
+  tags: Tag[];
+  caseStudy?: CaseStudy;
+}
+
+// --- Tags ---
 
 export const TAGS = {
   NEXT: {
@@ -62,15 +100,53 @@ export const TAGS = {
   },
 };
 
-export const PROJECTS = [
+// --- Projects ---
+
+export const PROJECTS: Project[] = [
   {
     title: "Dental Clinic - Sistema de Gestión Full Stack",
     description:
-      "Sistema integral para la gestión de clínicas dentales desarrollado con Java y Spring Boot. Implementa una arquitectura robusta con patrones MVC y DTOs, asegurando la escalabilidad del backend. Utiliza Spring Security y JWT para una autenticación segura. El frontend en React permite gestionar turnos, pacientes y odontólogos mediante formularios validados y una interfaz responsiva. Persistencia de datos optimizada en MySQL.",
-    link: "https://github.com/GinoL221/Clinica-Dental-MVC", // Link temporal al repo ya que el original era un placeholder
-    github: "https://github.com/GinoL221/Clinica-Dental-MVC",
+      "Sistema integral para la gestión de clínicas dentales con Java, Spring Boot y React. Backend con arquitectura MVC, Spring Security y JWT. Frontend con gestión de turnos, pacientes y odontólogos. Entregado con TDD, auditoría de código muerto y PRs encadenados.",
+    link: "https://github.com/GinoL221/Dental-Clinic",
+    github: "https://github.com/GinoL221/Dental-Clinic",
     image: "home-dental-clinic.webp",
     tags: [TAGS.JAVA, TAGS.SPRINGBOOT, TAGS.REACT, TAGS.MYSQL, TAGS.JWT],
+    caseStudy: {
+      slug: "dental-clinic",
+      tagline: "Cómo encontré un eval() sobre HTML del servidor en el flujo de login y lo rediseñé limpio.",
+      sections: [
+        {
+          heading: "El problema",
+          body: [
+            "Durante una auditoría sistemática del frontend de Dental Clinic encontré que el flujo de login ejecutaba eval() sobre HTML crudo devuelto por el servidor. No era un code smell abstracto: cualquier respuesta maliciosa o manipulada ejecutaría JavaScript arbitrario en el navegador del usuario.",
+            "El problema de raíz era un contrato implícito entre backend y frontend: el servidor devolvía HTML que el cliente interpretaba como código. Sin un contrato explícito de datos, agregar validación o tests era imposible sin antes rediseñar la comunicación.",
+          ],
+        },
+        {
+          heading: "El enfoque",
+          body: [
+            "Reemplacé el contrato implícito por un contrato JSON explícito: el backend devuelve datos estructurados, el frontend los renderiza. Sin intermediarios ejecutables.",
+            "Apliqué TDD (RED→GREEN) para cada pieza del rediseño: primero el test que falla por la razón correcta, después el código mínimo que lo hace pasar. Esto convirtió cada decisión de diseño en un caso de prueba verificable.",
+            "La auditoría de código muerto fue sistemática: cada archivo candidato se verificó con rg antes de eliminarlo. Nada se borró por intuición.",
+            "La entrega siguió la misma disciplina: PRs encadenados con slices revisables, donde cada PR tiene un inicio claro, un fin verificado y un rollback razonable. La misma práctica que este case study está usando.",
+          ],
+        },
+        {
+          heading: "El resultado",
+          body: [
+            "El eval() quedó en cero. El contrato entre backend y frontend es ahora explícito, tipado y testeable.",
+            "37 tests pasan en main. 5 bugs de runtime (TypeError, ReferenceError) fueron corregidos en el proceso. 7 archivos de código muerto fueron eliminados — cada uno verificado antes de borrarlo.",
+            "El resultado no es solo un repo más limpio. Es evidencia de un proceso: encontré algo raro, entendí por qué importaba, lo rediseñé con un criterio claro, lo probé y lo entregué en piezas revisables.",
+          ],
+        },
+      ],
+      metrics: [
+        { label: "eval() eliminados", value: "0" },
+        { label: "Tests en main", value: "37" },
+        { label: "Bugs corregidos", value: "5" },
+        { label: "Archivos de código muerto eliminados", value: "7" },
+      ],
+    },
   },
   {
     title: "Movies App - Explorador de Cine con API REST",
