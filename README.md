@@ -26,7 +26,7 @@ En él vas a encontrar una selección de mis proyectos destacados, mi perfil pro
 
 ## 🚀 Proyectos destacados en el portfolio
 
-- 🦷 **[Dental Clinic](https://github.com/GinoL221/Dental-Clinic)** — Sistema de gestión de clínica dental (Java, Spring Boot, React, MySQL, JWT).  
+- 🦷 **[Dental Clinic](https://github.com/GinoL221/Dental-Clinic)** — Sistema de gestión de clínica dental (Java, Spring Boot, Express/EJS, MySQL, JWT).  
 - 🎬 **[Movies App](https://github.com/GinoL221/Buscador_Peliculas)** — Aplicación en React que consume una API pública de películas.  
 - 🎧 **[Spotify Clone](https://github.com/GinoL221/Spotify-clon)** — Clon visual de Spotify con reproducción de audio (Astro + React).  
 - 🛒 **[Mercado Liebre](https://github.com/GinoL221/Mercado_Liebre)** — Ecommerce inicial con HTML, CSS y JS.

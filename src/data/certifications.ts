@@ -13,6 +13,7 @@ export const CORE_CERTIFICATIONS: Certification[] = [
   {
     name: "React.js",
     institution: "Certified Tech Developer / Digital House + Globant + Mercado Libre",
+    date: "2025",
   },
   {
     name: "DevOps Engineer",
@@ -32,10 +33,12 @@ export const CORE_CERTIFICATIONS: Certification[] = [
   {
     name: "Testing Manual QA",
     institution: "ProgramON / Coca-Cola Foundation / Chicos.net",
+    date: "2025",
   },
   {
     name: "Testing Automatizado con Playwright",
     institution: "ProgramON / Coca-Cola Foundation / Chicos.net",
+    date: "2026",
   },
 ];
 
@@ -43,21 +46,26 @@ export const AI_CERTIFICATIONS: Certification[] = [
   {
     name: "Claude 101",
     institution: "Anthropic",
+    date: "Jun 2026",
   },
   {
     name: "AI Fluency: Framework & Foundations",
     institution: "Anthropic",
+    date: "Jun 2026",
   },
   {
     name: "AI Fluency: AI Capabilities & Limitations",
     institution: "Anthropic",
+    date: "Jun 2026",
   },
   {
     name: "Introduction to Claude Cowork",
     institution: "Anthropic",
+    date: "Jun 2026",
   },
   {
     name: "Introduction to Agent Skills",
     institution: "Anthropic",
+    date: "Jun 2026",
   },
 ];

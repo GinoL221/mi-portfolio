@@ -7,11 +7,15 @@ import Projects from "@/components/Projects.astro";
 import Hero from "@/components/Hero.astro";
 import TitleSection from "@/components/TitleSection.astro";
 import AboutMe from "@/components/AboutMe.astro";
+import Education from "@/components/Education.astro";
+import Skills from "@/components/Skills.astro";
 
 import ProfileCheck from "@/icons/ProfileCheckIcon.astro";
 import BriefcaseIcon from "@/icons/BriefcaseIcon.astro";
 import CodeIcon from "@/icons/CodeIcon.astro";
 import AwardIcon from "@/icons/AwardIcon.astro";
+import GraduationCapIcon from "@/icons/GraduationCapIcon.astro";
+import ChipIcon from "@/icons/ChipIcon.astro";
 
 import Certifications from "@/components/Certifications.astro";
 ---
@@ -25,7 +29,7 @@ import Certifications from "@/components/Certifications.astro";
       <Hero />
     </SectionContainer>
 
-    <SectionContainer id="experiencia">
+    <SectionContainer id="experiencia" class="py-12 md:py-16">
       <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
         <BriefcaseIcon class="size-7" />
         Experiencia Laboral
@@ -33,7 +37,23 @@ import Certifications from "@/components/Certifications.astro";
       <Experience />
     </SectionContainer>
 
-    <SectionContainer id="certificaciones">
+    <SectionContainer id="educacion" class="py-12 md:py-16">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <GraduationCapIcon class="size-7" />
+        Educación
+      </h2>
+      <Education />
+    </SectionContainer>
+
+    <SectionContainer id="habilidades" class="py-12 md:py-16">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <ChipIcon class="size-7" />
+        Habilidades
+      </h2>
+      <Skills />
+    </SectionContainer>
+
+    <SectionContainer id="certificaciones" class="py-12 md:py-16">
       <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
         <AwardIcon class="size-7" />
         Certificaciones
@@ -41,7 +61,7 @@ import Certifications from "@/components/Certifications.astro";
       <Certifications />
     </SectionContainer>
 
-    <SectionContainer id="projects" class="pb-16 md:pb-36">
+    <SectionContainer id="proyectos" class="py-12 md:py-16 pb-16 md:pb-36">
       <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
         <CodeIcon class="size-7" />
         Proyectos
@@ -49,7 +69,7 @@ import Certifications from "@/components/Certifications.astro";
       <Projects />
     </SectionContainer>
 
-    <SectionContainer id="about-me">
+    <SectionContainer id="sobre-mi" class="py-12 md:py-16">
       <TitleSection>
         <ProfileCheck class="size-8" />
         Sobre mí

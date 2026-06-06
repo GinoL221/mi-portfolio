@@ -1,0 +1,26 @@
+---
+import { EDUCATION } from "@/data/education";
+---
+
+<div class="flex flex-col gap-y-4">
+  {
+    EDUCATION.map(({ degree, institution, period, note }) => (
+      <div class="p-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+        <div class="flex items-start justify-between gap-4 flex-wrap">
+          <div>
+            <p class="font-semibold text-gray-800 dark:text-gray-100">{degree}</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">{institution}</p>
+          </div>
+          <div class="flex items-center gap-2 flex-shrink-0">
+            <time class="text-sm text-gray-400 dark:text-gray-500">{period}</time>
+            {note && (
+              <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400">
+                {note}
+              </span>
+            )}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>

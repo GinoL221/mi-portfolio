@@ -1,0 +1,22 @@
+---
+import { SKILLS } from "@/data/skills";
+---
+
+<div class="flex flex-col gap-y-6">
+  {
+    SKILLS.map(({ name, skills }) => (
+      <div>
+        <h3 class="mb-2 text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+          {name}
+        </h3>
+        <ul class="flex flex-wrap gap-2">
+          {skills.map((skill) => (
+            <li class="px-3 py-1 text-sm rounded-full border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-900">
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>
