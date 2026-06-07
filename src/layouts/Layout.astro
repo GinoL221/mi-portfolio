@@ -16,6 +16,13 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="es">
   <head>
+    <script is:inline>
+      const saved = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (saved === "dark" || (!saved && prefersDark)) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.ico" />
@@ -33,7 +40,7 @@ const { title, description } = Astro.props;
 
   <body class="relative text-black dark:text-white">
     <div
-      class="fixed inset-0 z-[-2] min-h-full w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
+      class="fixed inset-0 z-[-2] min-h-full w-full bg-white bg-[radial-gradient(#00000015_1px,transparent_1px)] bg-[size:20px_20px] dark:bg-[#000000] dark:bg-[radial-gradient(#ffffff33_1px,#00091d_1px)]"
     >
     </div>
 
@@ -47,6 +54,17 @@ const { title, description } = Astro.props;
   <style is:global>
     :root {
       color-scheme: light dark;
+      --nav-scrolled-bg: rgb(229, 229, 229);
+      --nav-scrolled-shadow: none;
+      --body-color: rgba(17, 17, 17, 0.9);
+      --accent: #b45309;
+    }
+
+    html.dark {
+      --nav-scrolled-bg: rgba(0, 0, 0, 0.3);
+      --nav-scrolled-shadow: 0px 5px 50px -5px rgba(0, 0, 0, 0.1), 0px 0px 0 1px rgba(0, 0, 0, 0.3);
+      --body-color: rgba(255, 255, 255, 0.9);
+      --accent: #fde047;
     }
 
     html {
@@ -55,7 +73,7 @@ const { title, description } = Astro.props;
     }
 
     body {
-      color: rgba(17, 17, 17, 0.9);
+      color: var(--body-color);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -68,12 +86,6 @@ const { title, description } = Astro.props;
       }
     }
 
-    @media (prefers-color-scheme: dark) {
-      body {
-        color: rgba(255, 255, 255, 0.9);
-      }
-    }
-
     #header-nav {
       animation: blur linear both 0.5s;
       animation-timeline: scroll();
@@ -81,7 +93,11 @@ const { title, description } = Astro.props;
     }
 
     @keyframes blur {
+      from {
+        border: 0px;
+      }
       to {
+        box-shadow: var(--nav-scrolled-shadow);
         backdrop-filter: blur(20px);
         border-width: 1px;
         border-color: rgba(0, 0, 0);
@@ -89,34 +105,8 @@ const { title, description } = Astro.props;
         display: flex;
         flex-direction: row;
         align-items: center;
-        background-color: rgb(229, 229, 229);
+        background-color: var(--nav-scrolled-bg);
         border-radius: 9999px;
-      }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      @keyframes blur {
-        from {
-          border: 0px;
-        }
-        to {
-          box-shadow:
-            0px 5px 50px -5px rgba(0, 0, 0, 0.1),
-            0px 0px 0 1px rgba(0, 0, 0, 0.3);
-          background: rgba(0, 0, 0, 0.3);
-          backdrop-filter: blur(20px);
-          border-width: 1px;
-          border-color: rgba(0, 0, 0);
-          padding-left: 0.75rem;
-          padding-right: 0.75rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          background-color: rgba(0, 0, 0, 0.3);
-          border-radius: 9999px;
-        }
       }
     }
   </style>
