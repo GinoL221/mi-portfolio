@@ -1,27 +1,54 @@
+export interface Skill {
+  name: string;
+  tag?: string;
+}
+
 export interface SkillCategory {
   name: string;
-  skills: string[];
+  skills: Skill[];
 }
 
 export const SKILLS: SkillCategory[] = [
   {
     name: "Backend",
-    skills: ["Java", "Spring Boot", "Spring Security", "Node.js", "Express.js", "REST API", "JWT"],
+    skills: [
+      { name: "Java", tag: "java" },
+      { name: "Spring Boot", tag: "springboot" },
+      { name: "Spring Security" },
+      { name: "Node.js", tag: "node" },
+      { name: "Express.js", tag: "express" },
+      { name: "REST API" },
+      { name: "JWT", tag: "jwt" },
+    ],
   },
   {
     name: "Frontend",
-    skills: ["React", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "Next.js", "Astro"],
+    skills: [
+      { name: "React", tag: "react" },
+      { name: "JavaScript (ES6+)", tag: "javascript" },
+      { name: "HTML5", tag: "html" },
+      { name: "CSS3", tag: "css" },
+      { name: "Tailwind CSS", tag: "tailwindcss" },
+      { name: "Next.js", tag: "next" },
+      { name: "Astro", tag: "astro" },
+    ],
   },
   {
     name: "Bases de datos",
-    skills: ["MySQL"],
+    skills: [{ name: "MySQL", tag: "mysql" }],
   },
   {
     name: "Testing",
-    skills: ["Testing Manual QA", "Playwright"],
+    skills: [{ name: "Testing Manual QA" }, { name: "Playwright" }],
   },
   {
     name: "Herramientas y metodologías",
-    skills: ["Git", "GitHub", "Scrum", "Arquitectura MVC", "Patrones de Diseño"],
+    skills: [
+      { name: "Git" },
+      { name: "GitHub", tag: "github" },
+      { name: "Scrum" },
+      { name: "Arquitectura MVC" },
+      { name: "Patrones de Diseño" },
+    ],
   },
 ];

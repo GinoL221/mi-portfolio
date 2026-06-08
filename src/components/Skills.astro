@@ -1,5 +1,6 @@
 ---
 import { SKILLS } from "@/data/skills";
+import { TAGS } from "@/data/projects";
 ---
 
 <div class="flex flex-col gap-y-6">
@@ -10,11 +11,24 @@ import { SKILLS } from "@/data/skills";
           {name}
         </h3>
         <ul class="flex flex-wrap gap-2">
-          {skills.map((skill) => (
-            <li class="px-3 py-1 text-sm rounded-full border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-900">
-              {skill}
-            </li>
-          ))}
+          {skills.map((skill) => {
+            const tag = skill.tag
+              ? TAGS[skill.tag as keyof typeof TAGS]
+              : null;
+            const hoverClass = tag
+              ? tag.hoverClass
+              : "hover:bg-gray-50 dark:hover:bg-gray-800/50 hover:border-gray-400 dark:hover:border-gray-500";
+            return (
+              <li>
+                <span
+                  class={`flex items-center gap-x-2 rounded-full text-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-1 px-3 whitespace-nowrap transition-colors duration-200 cursor-default ${hoverClass}`}
+                >
+                  {tag && <tag.icon class="size-4" />}
+                  {skill.name}
+                </span>
+              </li>
+            );
+          })}
         </ul>
       </div>
     ))
