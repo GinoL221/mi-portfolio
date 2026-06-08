@@ -1,0 +1,61 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Astro v5.13, Tailwind CSS v4.1, TypeScript v5.9
+  Architecture: Static site / Astro Component Architecture
+  Testing: None configured
+  Style: Tailwind CSS styling, Astro templates
+
+testing:
+  strict_tdd: false
+  detected_date: "2026-06-08"
+  capabilities:
+    test_runner:
+      command: ""
+      framework: "None"
+    layers:
+      unit:
+        available: false
+        tool: ""
+      integration:
+        available: false
+        tool: ""
+      e2e:
+        available: false
+        tool: ""
+    coverage:
+      available: false
+      command: ""
+    quality:
+      linter:
+        available: true
+        command: "npx astro check"
+      type_checker:
+        available: true
+        command: "npx tsc --noEmit"
+      formatter:
+        available: false
+        command: ""
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include sequence diagrams for complex flows
+    - Document architecture decisions with rationale
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+  apply:
+    - Follow existing code patterns
+    tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: "npm run build"
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas

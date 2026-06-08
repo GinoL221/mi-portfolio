@@ -1,8 +1,12 @@
 ---
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import GitHubIcon from "@/icons/GitHubIcon.astro";
 import LinkIcon from "@/icons/LinkIcon.astro";
-import { PROJECTS } from "../data/projects";
+import { TAGS } from "@/data/projects";
+
+const projects = await getCollection("projects");
+projects.sort((a, b) => a.data.order - b.data.order);
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/projects/*.{jpeg,jpg,png,gif,webp}"
@@ -11,7 +15,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github, caseStudy }) => {
+    projects.map((project) => {
+      const { id, data } = project;
+      const { title, description, tags, link, github, image, tagline } = data;
       const imagePath = `/src/assets/projects/${image}`;
       if (!images[imagePath]) {
         throw new Error(
@@ -26,17 +32,21 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
               {title}
             </h3>
             <div class="flex flex-wrap mt-2">
-              <ul class="flex flex-row mb-2 gap-x-2">
-                {tags.map((tag) => (
-                  <li>
-                    <span
-                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                    >
-                      <tag.icon class="size-4" />
-                      {tag.name}
-                    </span>
-                  </li>
-                ))}
+              <ul class="flex flex-wrap mb-2 gap-2">
+                {tags.map((tagKey) => {
+                  const tag = TAGS[tagKey as keyof typeof TAGS];
+                  if (!tag) return null;
+                  return (
+                    <li>
+                      <span
+                        class={`flex items-center gap-x-2 rounded-full text-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-1 px-3 whitespace-nowrap transition-colors duration-200 cursor-default ${tag.hoverClass}`}
+                      >
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
 
               <div class="mt-2 text-gray-700 dark:text-gray-400 text-pretty">
@@ -65,9 +75,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                     Sitio Web
                   </a>
                 )}
-                {caseStudy && (
+                {tagline && (
                   <a
-                    href={`/projects/${caseStudy.slug}`}
+                    href={`/projects/${id}`}
                     class="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm text-gray-800 transition bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700"
                   >
                     Ver caso de estudio

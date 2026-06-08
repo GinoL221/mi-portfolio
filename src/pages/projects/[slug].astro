@@ -1,18 +1,21 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import CaseStudy from "@/components/CaseStudy.astro";
-import { PROJECTS } from "@/data/projects";
 
 export async function getStaticPaths() {
-  return PROJECTS.filter((p) => p.caseStudy != null).map((p) => ({
-    params: { slug: p.caseStudy!.slug },
-    props: { project: p },
-  }));
+  const projects = await getCollection("projects");
+  return projects
+    .filter((p) => p.data.tagline != null)
+    .map((p) => ({
+      params: { slug: p.id },
+      props: { project: p },
+    }));
 }
 
 const { project } = Astro.props;
-const { title, image, caseStudy } = project;
+const { title, image, tagline } = project.data;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/projects/*.{jpeg,jpg,png,gif,webp}"
@@ -28,7 +31,7 @@ if (!images[imagePath]) {
 
 <Layout
   title={`${title} — Case Study | Gino Lencina`}
-  description={caseStudy?.tagline}
+  description={tagline}
 >
   <SectionContainer class="py-12 md:py-16">
     <a

@@ -1,16 +1,19 @@
 ---
 import { Image } from "astro:assets";
+import { render, type CollectionEntry } from "astro:content";
 import GitHubIcon from "@/icons/GitHubIcon.astro";
 import LinkIcon from "@/icons/LinkIcon.astro";
-import type { Project } from "@/data/projects";
+import { TAGS } from "@/data/projects";
 
 export interface Props {
-  project: Project;
+  project: CollectionEntry<"projects">;
   heroImage: () => Promise<{ default: ImageMetadata }>;
 }
 
 const { project, heroImage } = Astro.props;
-const { title, github, link, tags, caseStudy } = project;
+const { title, github, link, tags, tagline, metrics } = project.data;
+
+const { Content } = await render(project);
 ---
 
 <article class="flex flex-col gap-y-12">
@@ -18,19 +21,23 @@ const { title, github, link, tags, caseStudy } = project;
   <header class="flex flex-col gap-y-4">
     <div class="flex flex-wrap gap-x-2">
       {
-        tags.map((tag) => (
-          <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
-            <tag.icon class="size-4" />
-            {tag.name}
-          </span>
-        ))
+        tags.map((tagKey) => {
+          const tag = TAGS[tagKey as keyof typeof TAGS];
+          if (!tag) return null;
+          return (
+            <span class={`flex items-center gap-x-2 rounded-full text-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-1 px-3 whitespace-nowrap transition-colors duration-200 cursor-default ${tag.hoverClass}`}>
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          );
+        })
       }
     </div>
     <h1 class="text-4xl font-bold text-gray-800 dark:text-gray-100">{title}</h1>
     {
-      caseStudy && (
+      tagline && (
         <p class="text-xl text-gray-600 dark:text-gray-400 text-pretty">
-          {caseStudy.tagline}
+          {tagline}
         </p>
       )
     }
@@ -75,9 +82,9 @@ const { title, github, link, tags, caseStudy } = project;
 
   <!-- Metrics strip -->
   {
-    caseStudy && caseStudy.metrics.length > 0 && (
+    metrics && metrics.length > 0 && (
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        {caseStudy.metrics.map(({ label, value }) => (
+        {metrics.map(({ label, value }) => (
           <div class="flex flex-col items-center gap-y-1 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
             <span class="text-3xl font-bold text-accent">
               {value}
@@ -90,19 +97,30 @@ const { title, github, link, tags, caseStudy } = project;
   }
 
   <!-- Narrative sections -->
-  {
-    caseStudy &&
-      caseStudy.sections.map(({ heading, body }) => (
-        <section class="flex flex-col gap-y-4">
-          <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-100">
-            {heading}
-          </h2>
-          {body.map((paragraph) => (
-            <p class="text-gray-700 dark:text-gray-400 text-pretty leading-relaxed">
-              {paragraph}
-            </p>
-          ))}
-        </section>
-      ))
-  }
+  <div class="case-study-content flex flex-col gap-y-6">
+    <Content />
+  </div>
 </article>
+
+<style>
+  @reference "tailwindcss";
+
+  .case-study-content :global(h2) {
+    @apply text-2xl font-semibold text-gray-800 dark:text-gray-100 mt-8 mb-4;
+  }
+  .case-study-content :global(p) {
+    @apply text-gray-700 dark:text-gray-400 text-pretty leading-relaxed mb-4;
+  }
+  .case-study-content :global(ul) {
+    @apply list-disc list-inside mb-4 pl-4 text-gray-700 dark:text-gray-400;
+  }
+  .case-study-content :global(li) {
+    @apply mb-2;
+  }
+  .case-study-content :global(code) {
+    @apply bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm text-red-600 dark:text-red-400 font-mono;
+  }
+  .case-study-content :global(strong) {
+    @apply font-semibold text-gray-950 dark:text-white;
+  }
+</style>

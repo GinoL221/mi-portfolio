@@ -1,9 +1,10 @@
 ---
 import "../styles/global.css";
 import "@fontsource-variable/onest";
+import { ClientRouter } from "astro:transitions";
 
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 
 interface Props {
   title: string;
@@ -17,16 +18,23 @@ const { title, description } = Astro.props;
 <html lang="es">
   <head>
     <script is:inline>
-      const saved = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (saved === "dark" || (!saved && prefersDark)) {
-        document.documentElement.classList.add("dark");
-      }
+      const applyTheme = () => {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (saved === "dark" || (!saved && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      };
+      applyTheme();
+      document.addEventListener("astro:after-swap", applyTheme);
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <ClientRouter />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
@@ -54,15 +62,17 @@ const { title, description } = Astro.props;
   <style is:global>
     :root {
       color-scheme: light dark;
-      --nav-scrolled-bg: rgb(229, 229, 229);
-      --nav-scrolled-shadow: none;
+      --nav-scrolled-bg: rgba(255, 255, 255, 0.3);
+      --nav-scrolled-shadow: 0px 5px 50px -5px rgba(0, 0, 0, 0.05), 0px 0px 0 1px rgba(0, 0, 0, 0.05);
+      --nav-scrolled-border: rgba(0, 0, 0, 0.1);
       --body-color: rgba(17, 17, 17, 0.9);
       --accent: #b45309;
     }
 
     html.dark {
       --nav-scrolled-bg: rgba(0, 0, 0, 0.3);
-      --nav-scrolled-shadow: 0px 5px 50px -5px rgba(0, 0, 0, 0.1), 0px 0px 0 1px rgba(0, 0, 0, 0.3);
+      --nav-scrolled-shadow: 0px 5px 50px -5px rgba(0, 0, 0, 0.15), 0px 0px 0 1px rgba(255, 255, 255, 0.05);
+      --nav-scrolled-border: rgba(255, 255, 255, 0.15);
       --body-color: rgba(255, 255, 255, 0.9);
       --accent: #fde047;
     }
@@ -100,7 +110,7 @@ const { title, description } = Astro.props;
         box-shadow: var(--nav-scrolled-shadow);
         backdrop-filter: blur(20px);
         border-width: 1px;
-        border-color: rgba(0, 0, 0);
+        border-color: var(--nav-scrolled-border);
         padding: 0.25rem 0.75rem;
         display: flex;
         flex-direction: row;

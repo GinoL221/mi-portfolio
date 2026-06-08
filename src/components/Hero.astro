@@ -7,6 +7,7 @@ import SocialPill from "@/components/SocialPill.astro";
 import GitHubIcon from "@/icons/GitHubIcon.astro";
 import EmailIcon from "@/icons/EmailIcon.astro";
 import LinkedInIcon from "@/icons/LinkedInIcon.astro";
+import { SITE_EMAIL } from "@/data/site";
 ---
 
 <div class="max-w-xl">
@@ -50,8 +51,8 @@ import LinkedInIcon from "@/icons/LinkedInIcon.astro";
     <GitHubIcon class="size-4 md:size-6" />
     GitHub
   </SocialPill>
-  <SocialPill href="mailto:ginolencina@gmail.com">
+  <SocialPill href={`mailto:${SITE_EMAIL}`}>
     <EmailIcon class="size-4 md:size-6" />
-    ginolencina@gmail.com
+    {SITE_EMAIL}
   </SocialPill>
 </nav>
