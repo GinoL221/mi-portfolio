@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import GitHubIcon from "@/icons/GitHubIcon.astro";
 import LinkIcon from "@/icons/LinkIcon.astro";
+import TechTagPill from "@/components/TechTagPill.astro";
 import { TAGS } from "@/data/projects";
 
 const projects = await getCollection("projects");
@@ -38,12 +39,11 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                   if (!tag) return null;
                   return (
                     <li>
-                      <span
-                        class={`flex items-center gap-x-2 rounded-full text-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-1 px-3 whitespace-nowrap transition-colors duration-200 cursor-default ${tag.hoverClass}`}
-                      >
-                        <tag.icon class="size-4" />
-                        {tag.name}
-                      </span>
+                      <TechTagPill
+                        name={tag.name}
+                        icon={tag.icon}
+                        hoverClass={tag.hoverClass}
+                      />
                     </li>
                   );
                 })}

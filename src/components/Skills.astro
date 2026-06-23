@@ -1,6 +1,7 @@
 ---
 import { SKILLS } from "@/data/skills";
 import { TAGS } from "@/data/projects";
+import TechTagPill from "@/components/TechTagPill.astro";
 ---
 
 <div class="flex flex-col gap-y-6">
@@ -15,17 +16,13 @@ import { TAGS } from "@/data/projects";
             const tag = skill.tag
               ? TAGS[skill.tag as keyof typeof TAGS]
               : null;
-            const hoverClass = tag
-              ? tag.hoverClass
-              : "hover:bg-gray-50 dark:hover:bg-gray-800/50 hover:border-gray-400 dark:hover:border-gray-500";
             return (
               <li>
-                <span
-                  class={`flex items-center gap-x-2 rounded-full text-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-1 px-3 whitespace-nowrap transition-colors duration-200 cursor-default ${hoverClass}`}
-                >
-                  {tag && <tag.icon class="size-4" />}
-                  {skill.name}
-                </span>
+                <TechTagPill
+                  name={skill.name}
+                  icon={tag?.icon}
+                  hoverClass={tag?.hoverClass}
+                />
               </li>
             );
           })}
