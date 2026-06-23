@@ -4,6 +4,7 @@ import { render, type CollectionEntry } from "astro:content";
 import GitHubIcon from "@/icons/GitHubIcon.astro";
 import LinkIcon from "@/icons/LinkIcon.astro";
 import TechTagPill from "@/components/TechTagPill.astro";
+import LinkButton from "@/components/LinkButton.astro";
 import { TAGS } from "@/data/projects";
 
 export interface Props {
@@ -42,28 +43,18 @@ const { Content } = await render(project);
     <footer class="flex gap-x-4">
       {
         github && (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm text-gray-800 transition bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700"
-          >
+          <LinkButton href={github} external>
             <GitHubIcon class="size-6" />
             Código
-          </a>
+          </LinkButton>
         )
       }
       {
         link && link !== github && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm text-gray-800 transition bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700"
-          >
+          <LinkButton href={link} external>
             <LinkIcon class="size-4" />
             Sitio Web
-          </a>
+          </LinkButton>
         )
       }
     </footer>
