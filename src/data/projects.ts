@@ -12,6 +12,8 @@ import NodeJSIcon from "@/icons/NodeJSIcon.astro";
 import ExpressJSIcon from "@/icons/ExpressJSIcon.astro";
 import HTMLIcon from "@/icons/HTMLIcon.astro";
 import GitHubIcon from "@/icons/GitHubIcon.astro";
+import SvelteIcon from "@/icons/SvelteIcon.astro";
+import TypeScriptIcon from "@/icons/TypeScriptIcon.astro";
 
 export const TAGS = {
   next: {
@@ -97,5 +99,17 @@ export const TAGS = {
     icon: GitHubIcon,
     hoverClass:
       "hover:bg-gray-50 hover:border-gray-700 hover:text-gray-700 dark:hover:bg-gray-800/50 dark:hover:border-gray-300 dark:hover:text-gray-300",
+  },
+  sveltekit: {
+    name: "SvelteKit",
+    icon: SvelteIcon,
+    hoverClass:
+      "hover:bg-orange-50 hover:border-orange-600 hover:text-orange-600 dark:hover:bg-gray-800/50 dark:hover:border-orange-400 dark:hover:text-orange-400",
+  },
+  typescript: {
+    name: "TypeScript",
+    icon: TypeScriptIcon,
+    hoverClass:
+      "hover:bg-blue-50 hover:border-blue-600 hover:text-blue-600 dark:hover:bg-gray-800/50 dark:hover:border-blue-400 dark:hover:text-blue-400",
   },
 };
