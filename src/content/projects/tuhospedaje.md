@@ -9,6 +9,7 @@ tags:
   - java
   - springboot
   - react
+  - mariadb
   - jwt
 draft: true
 ---
