@@ -14,6 +14,7 @@ import HTMLIcon from "@/icons/HTMLIcon.astro";
 import GitHubIcon from "@/icons/GitHubIcon.astro";
 import SvelteIcon from "@/icons/SvelteIcon.astro";
 import TypeScriptIcon from "@/icons/TypeScriptIcon.astro";
+import MariaDBIcon from "@/icons/MariaDBIcon.astro";
 
 export const TAGS = {
   next: {
@@ -111,5 +112,11 @@ export const TAGS = {
     icon: TypeScriptIcon,
     hoverClass:
       "hover:bg-blue-50 hover:border-blue-600 hover:text-blue-600 dark:hover:bg-gray-800/50 dark:hover:border-blue-400 dark:hover:text-blue-400",
+  },
+  mariadb: {
+    name: "MariaDB",
+    icon: MariaDBIcon,
+    hoverClass:
+      "hover:bg-sky-50 hover:border-sky-800 hover:text-sky-800 dark:hover:bg-gray-800/50 dark:hover:border-sky-500 dark:hover:text-sky-500",
   },
 };
