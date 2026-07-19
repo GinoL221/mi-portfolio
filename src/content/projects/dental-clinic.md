@@ -1,6 +1,6 @@
 ---
 title: "Dental Clinic - Sistema de Gestión Full Stack"
-description: "Sistema integral para la gestión de clínicas dentales con Java, Spring Boot y React. Backend con arquitectura MVC, Spring Security y JWT. Frontend con gestión de turnos, pacientes y odontólogos. Entregado con TDD, auditoría de código muerto y PRs encadenados."
+description: "Sistema integral para la gestión de clínicas dentales con Java 21, Spring Boot 3 y Spring Security. RBAC con roles ADMIN/DENTIST/PATIENT, JWT en cookie httpOnly (nunca en localStorage). Frontend desacoplado en SvelteKit 2. Entregado con TDD, auditoría de código muerto y PRs encadenados."
 link: "https://github.com/GinoL221/Dental-Clinic"
 github: "https://github.com/GinoL221/Dental-Clinic"
 image: "home-dental-clinic.webp"
@@ -8,7 +8,7 @@ order: 1
 tags:
   - java
   - springboot
-  - react
+  - sveltekit
   - mysql
   - jwt
 tagline: "Cómo encontré un eval() sobre HTML del servidor en el flujo de login y lo rediseñé limpio."
