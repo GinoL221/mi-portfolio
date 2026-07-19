@@ -7,7 +7,7 @@ import CaseStudy from "@/components/CaseStudy.astro";
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
   return projects
-    .filter((p) => p.data.tagline != null)
+    .filter((p) => p.data.tagline != null && !p.data.draft)
     .map((p) => ({
       params: { slug: p.id },
       props: { project: p },

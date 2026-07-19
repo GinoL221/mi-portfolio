@@ -12,6 +12,7 @@ const projects = defineCollection({
     order: z.number(),
     tags: z.array(z.string()),
     tagline: z.string().optional(),
+    draft: z.boolean().optional(),
     metrics: z.array(
       z.object({
         label: z.string(),
