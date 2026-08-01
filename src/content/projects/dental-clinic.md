@@ -1,6 +1,6 @@
 ---
 title: "Dental Clinic - Sistema de Gestión Full Stack"
-description: "Sistema integral para la gestión de clínicas dentales con Java 21, Spring Boot 3 y Spring Security. RBAC con roles ADMIN/DENTIST/PATIENT, JWT en cookie httpOnly (nunca en localStorage). Frontend desacoplado en SvelteKit 2. Entregado con TDD, auditoría de código muerto y PRs encadenados."
+description: "Sistema integral para la gestión de clínicas dentales con Java 21, Spring Boot 3 y Spring Security. RBAC con roles ADMIN/DENTIST/PATIENT, JWT en cookie httpOnly (nunca en localStorage). Frontend desacoplado en SvelteKit 2. Entregado con TDD, auditoría de código muerto, PRs encadenados y suite E2E full-stack con Playwright contra backend y frontend reales."
 link: "https://github.com/GinoL221/Dental-Clinic"
 github: "https://github.com/GinoL221/Dental-Clinic"
 image: "home-dental-clinic.webp"
@@ -16,7 +16,7 @@ metrics:
   - label: "eval() eliminados"
     value: "0"
   - label: "Tests en main"
-    value: "37"
+    value: "353"
   - label: "Bugs corregidos"
     value: "5"
   - label: "Archivos de código muerto eliminados"
