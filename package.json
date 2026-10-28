@@ -7,18 +7,20 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "astro check"
+    "check": "astro check",
+    "test:e2e": "npm run build && playwright test"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource-variable/onest": "^5.2.9",
     "@fontsource/twinkle-star": "^5.2.6",
     "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.13.9",
+    "astro": "7.4.2",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@playwright/test": "1.64.1",
     "typescript": "^5.9.3"
   }
 }
