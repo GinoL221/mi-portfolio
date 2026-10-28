@@ -22,11 +22,19 @@ import Certifications from "@/components/Certifications.astro";
 
 <Layout
   title="Gino Lencina | Full Stack Developer - Java, Spring Boot & React"
-  description="Portfolio profesional de Gino Lencina, Desarrollador Web Full Stack. Especialista en Java, Spring Boot y React con enfoque en aplicaciones escalables y alto rendimiento."
+  description="Portfolio profesional de Gino Lencina, desarrollador Full Stack con Java, Spring Boot y React. Proyectos web con foco en seguridad, pruebas y experiencia de usuario."
 >
-  <main class="px-4">
-    <SectionContainer class="py-16 md:py-36">
+  <main class="px-4 pt-28 md:pt-20">
+    <SectionContainer id="inicio" class="rounded-xl bg-[#f4f6fa] px-4 pt-12 pb-16 dark:bg-[#101c2c] md:px-8 md:py-20">
       <Hero />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos" class="py-12 md:py-16">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
     </SectionContainer>
 
     <SectionContainer id="experiencia" class="py-12 md:py-16">
@@ -59,14 +67,6 @@ import Certifications from "@/components/Certifications.astro";
         Certificaciones
       </h2>
       <Certifications />
-    </SectionContainer>
-
-    <SectionContainer id="proyectos" class="py-12 md:py-16 pb-16 md:pb-36">
-      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-        <CodeIcon class="size-7" />
-        Proyectos
-      </h2>
-      <Projects />
     </SectionContainer>
 
     <SectionContainer id="sobre-mi" class="py-12 md:py-16">

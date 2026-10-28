@@ -43,7 +43,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                       <TechTagPill
                         name={tag.name}
                         icon={tag.icon}
-                        hoverClass={tag.hoverClass}
+                        hoverClass="hover:bg-blue-50 hover:border-blue-700 hover:text-[#1e40af] dark:hover:bg-slate-800 dark:hover:border-blue-300 dark:hover:text-[#93c5fd]"
                       />
                     </li>
                   );
@@ -60,7 +60,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                     Código
                   </LinkButton>
                 )}
-                {link && (
+                {link && link !== github && (
                   <LinkButton href={link} external>
                     <LinkIcon class="size-4" />
                     Sitio Web

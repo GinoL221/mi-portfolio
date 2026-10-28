@@ -13,7 +13,7 @@ tags:
   - jwt
 tagline: "Cómo encontré un eval() sobre HTML del servidor en el flujo de login y lo rediseñé limpio."
 metrics:
-  - label: "eval() eliminados"
+  - label: "Usos de eval() restantes"
     value: "0"
   - label: "Tests en main"
     value: "353"
