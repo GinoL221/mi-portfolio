@@ -179,6 +179,27 @@ test("footer links use the blue accent on hover in both themes", async ({ page }
   }
 });
 
+test("footer keeps a balanced gap from the final content section", async ({ page }) => {
+  for (const theme of ["light", "dark"]) {
+    await page.evaluate((value) => localStorage.setItem("theme", value), theme);
+    await page.reload();
+    const gap = await page.evaluate(() => {
+      const lastSection = document.querySelector("#sobre-mi")!;
+      const footer = document.querySelector("body > footer")!;
+      return footer.getBoundingClientRect().top - lastSection.getBoundingClientRect().bottom;
+    });
+    expect(gap).toBeGreaterThanOrEqual(0);
+    expect(gap).toBeLessThanOrEqual(24);
+  }
+});
+
+test("footer does not dim its links and text through parent opacity", async ({ page }) => {
+  for (const theme of ["light", "dark"]) {
+    await page.evaluate((value) => localStorage.setItem("theme", value), theme);
+    await page.reload();
+    await expect(page.locator("body > footer")).toHaveCSS("opacity", "1");
+  }
+});
 
 test("about highlights and portrait accent follow the blue palette", async ({ page }) => {
   for (const theme of ["light", "dark"]) {
