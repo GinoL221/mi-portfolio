@@ -17,6 +17,17 @@ En él vas a encontrar una selección de mis proyectos destacados, mi perfil pro
 - ⚛️ [React](https://react.dev/) — Componentes dinámicos  
 - ☁️ Despliegue en [Netlify](https://www.netlify.com/)
 
+## Pruebas en navegador
+
+Astro 7 requiere Node.js 22.23.4 o superior. Instalá las dependencias y Chromium para Playwright una vez:
+
+```bash
+npm_config_cache="$PWD/.astro/npm-cache" npm ci
+npm_config_cache="$PWD/.astro/npm-cache" PLAYWRIGHT_BROWSERS_PATH="$PWD/.astro/playwright-browsers" npx playwright install --only-shell chromium
+```
+
+Ejecutá `npm run test:e2e` para compilar el sitio y verificar el espacio entre la navegación fija y el contenido de retorno. Las pruebas usan dos tamaños de pantalla e inician una vista previa local en el puerto 4342, que debe estar libre.
+
 ## 📂 Secciones
 
 - **Inicio** → Presentación y disponibilidad laboral  
