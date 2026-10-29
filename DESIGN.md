@@ -37,7 +37,7 @@ Onest Variable es la fuente principal, con `system-ui` y `sans-serif` como alter
 
 ## Layout
 
-La primera pantalla usa una columna en móvil y dos desde el breakpoint `md` de Tailwind. El perfil, los enlaces de contacto y el proyecto destacado permanecen en orden de lectura lógico. La barra de navegación puede ocupar más de una fila cuando el ancho es reducido.
+La primera pantalla usa una columna en móvil y dos desde el breakpoint `md` de Tailwind. El perfil, los enlaces de contacto y el proyecto destacado permanecen en orden de lectura lógico. La barra de navegación puede ocupar más de una fila cuando el ancho es reducido. Las páginas de detalle y 404 reservan espacio superior para la navegación fija, de modo que el contenido de retorno no quede debajo de la barra.
 
 ## Elevation & Depth
 
@@ -51,7 +51,7 @@ La foto y las etiquetas son redondeadas; el panel de la primera pantalla y la ta
 
 ### Navegación
 
-Barra fija con enlaces a secciones y control de tema. En móvil los elementos se distribuyen en varias filas en lugar de quedar recortados; una superficie sólida con contorno y sombra suaves la separa del contenido durante el desplazamiento. Los enlaces y el control comparten un acento de interacción: azul `#1e40af` en tema claro y azul `#93c5fd` en tema oscuro; el enlace de la sección activa usa el mismo acento.
+Barra fija con enlaces a secciones y control de tema. En móvil los elementos se distribuyen en varias filas en lugar de quedar recortados; una superficie sólida con contorno y sombra suaves la separa del contenido durante el desplazamiento. Los enlaces y el control comparten un acento de interacción: azul `#1e40af` en tema claro y azul `#93c5fd` en tema oscuro; el enlace de la sección activa usa el mismo acento. Los enlaces conservan un foco visible al navegar con teclado.
 
 ### Experiencia
 
@@ -71,11 +71,15 @@ Los fragmentos destacados usan el acento azul (`#1e40af` en claro y `#93c5fd` en
 
 ### Proyecto destacado
 
-Presenta el nombre, una descripción, tecnologías, una decisión técnica y un enlace al caso de estudio. Se muestra si el proyecto existe, no está en borrador y tiene una descripción breve del caso.
+Presenta el nombre, una descripción, tecnologías, una decisión técnica y un enlace al caso de estudio. Se muestra si el proyecto existe, no está en borrador y tiene una descripción breve del caso. El enlace destacado y los botones de proyectos usan un contorno de foco de 2 px, separado 2 px, azul `#1e40af` en claro y `#93c5fd` en oscuro.
+
+### Acciones de retorno
+
+Los enlaces «Volver a proyectos» del caso de estudio y «Volver al inicio» de 404 usan un contorno de foco de 2 px, separado 2 px, en el acento azul del tema: `#1e40af` en claro y `#93c5fd` en oscuro.
 
 ### Contacto y etiquetas
 
-Los enlaces a perfiles y correo se muestran como controles redondeados, con hover de inversión neutra. Los enlaces del pie mantienen el subrayado y usan los mismos acentos azules al pasar el cursor. Las tecnologías aparecen como etiquetas informativas, no como filtros interactivos. En la lista de Proyectos, su estado hover usa el mismo acento azul de la navegación en cada tema; las etiquetas de otras secciones conservan sus estilos propios.
+Los enlaces a perfiles y correo se muestran como controles redondeados, con hover de inversión neutra y foco de teclado azul: `#1e40af` en tema claro y `#93c5fd` en tema oscuro. Los enlaces del pie mantienen el subrayado y usan los mismos acentos azules al pasar el cursor. Las tecnologías aparecen como etiquetas informativas, no como filtros interactivos. En la lista de Proyectos, su estado hover usa el mismo acento azul de la navegación en cada tema; las etiquetas de otras secciones conservan sus estilos propios.
 
 ## Do's and Don'ts
 

@@ -25,7 +25,7 @@ npm_config_cache="$PWD/.astro/npm-cache" npm ci
 npm_config_cache="$PWD/.astro/npm-cache" PLAYWRIGHT_BROWSERS_PATH="$PWD/.astro/playwright-browsers" npx playwright install --only-shell chromium
 ```
 
-Ejecutá `npm run test:e2e` para compilar el sitio y verificar la paleta y el espacio entre la navegación fija y el contenido de retorno en ambos temas y varios tamaños de pantalla. Las pruebas inician una vista previa local en el puerto 4342 y requieren que esté libre.
+Ejecutá `npm run test:e2e` para compilar el sitio y verificar navegación, paleta, foco de teclado, tema y caso de estudio en ambos temas y en varios tamaños de pantalla. Las pruebas inician una vista previa local en el puerto 4342 y requieren que esté libre.
 
 ## 📂 Secciones
 
