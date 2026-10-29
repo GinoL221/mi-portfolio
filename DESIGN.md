@@ -75,7 +75,7 @@ Presenta el nombre, una descripción, tecnologías, una decisión técnica y un 
 
 ### Contacto y etiquetas
 
-Los enlaces a perfiles y correo se muestran como controles redondeados, con hover de inversión neutra. Los enlaces del pie mantienen el subrayado y usan los mismos acentos azules al pasar el cursor. Las tecnologías aparecen como etiquetas informativas, no como filtros interactivos. En la lista de Proyectos, su estado hover usa el mismo acento azul de la navegación en cada tema; las etiquetas de otras secciones conservan sus estilos propios.
+Los enlaces a perfiles y correo se muestran como controles redondeados, con hover de inversión neutra. Los enlaces del pie mantienen el subrayado y usan los mismos acentos azules al pasar el cursor. El pie hereda el fondo continuo de la página, sin una superficie independiente, y conserva una separación breve del contenido anterior. La legibilidad se define en los colores del texto, no con opacidad sobre todo el contenedor. Las tecnologías aparecen como etiquetas informativas, no como filtros interactivos. En la lista de Proyectos, su estado hover usa el mismo acento azul de la navegación en cada tema; las etiquetas de otras secciones conservan sus estilos propios.
 
 ## Do's and Don'ts
 
