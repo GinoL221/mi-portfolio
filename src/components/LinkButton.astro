@@ -11,7 +11,7 @@ const { href, external = false } = Astro.props;
   href={href}
   target={external ? "_blank" : undefined}
   rel={external ? "noopener noreferrer" : undefined}
-  class="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm text-gray-800 transition bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700"
+  class="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm text-gray-800 transition bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e40af] dark:focus-visible:outline-[#93c5fd]"
 >
   <slot />
 </a>
