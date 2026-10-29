@@ -13,7 +13,7 @@ tags:
   - jwt
 tagline: "Cómo encontré un eval() sobre HTML del servidor en el flujo de login y lo rediseñé limpio."
 metrics:
-  - label: "eval() eliminados"
+  - label: "Usos de eval() restantes"
     value: "0"
   - label: "Tests en main"
     value: "353"
@@ -43,6 +43,6 @@ La entrega siguió la misma disciplina: PRs encadenados con slices revisables, d
 
 El `eval()` quedó en cero. El contrato entre backend y frontend es ahora explícito, tipado y testeable.
 
-37 tests pasan en main. 5 bugs de runtime (TypeError, ReferenceError) fueron corregidos en el proceso. 7 archivos de código muerto fueron eliminados — cada uno verificado antes de borrarlo.
+353 tests pasan en main. 5 bugs de runtime (TypeError, ReferenceError) fueron corregidos en el proceso. 7 archivos de código muerto fueron eliminados — cada uno verificado antes de borrarlo.
 
 El resultado no es solo un repo más limpio. Es evidencia de un proceso: encontré algo raro, entendí por qué importaba, lo rediseñé con un criterio claro, lo probé y lo entregué en piezas revisables.
