@@ -146,6 +146,7 @@ test("footer links use the blue accent on hover in both themes", async ({ page }
   for (const theme of ["light", "dark"]) {
     await page.evaluate((value) => localStorage.setItem("theme", value), theme);
     await page.reload();
+    await page.addStyleTag({ content: "html { scroll-behavior: auto !important; }" });
     const accent = theme === "light" ? "rgb(30, 64, 175)" : "rgb(147, 197, 253)";
     const surface = theme === "light" ? "rgb(234, 234, 234)" : "rgb(51, 58, 74)";
     const links = page.locator("body > footer a");
