@@ -54,3 +54,12 @@ test("a repository is not presented as a separate website", () => {
 test("projects with distinct website links retain them", () => {
   assert.match(home, /Sitio Web/);
 });
+
+test("the Spotify project links to its existing repository", () => {
+  const article = [...home.matchAll(/<article\b[^>]*>[\s\S]*?<\/article>/g)]
+    .map(([item]) => item)
+    .find((item) => item.includes("Spotify Clone"));
+  assert.ok(article);
+  assert.match(article, /href="https:\/\/github\.com\/GinoL221\/Spotify-clon"/);
+  assert.doesNotMatch(article, /github\.com\/GinoL221\/spotify-clone/);
+});
