@@ -1,5 +1,12 @@
 import { expect, test } from "@playwright/test";
 
+test("copyright separates the year from the linked name", async ({ page }) => {
+  await page.goto("/");
+  const copyright = page.locator("body > footer span");
+  await expect(copyright).toHaveText(/©\s*\d{4}\s+Gino\.\s*Unos pocos derechos reservados\./);
+  await expect(copyright.getByRole("link", { name: "Gino", exact: true })).toHaveAttribute("href", "https://www.linkedin.com/in/ginolencina/");
+});
+
 test("footer layout adapts without changing link destinations", async ({ page }, testInfo) => {
   await page.goto("/");
   const footer = page.locator("body > footer");
