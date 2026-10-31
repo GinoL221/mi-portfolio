@@ -51,7 +51,7 @@ La foto y las etiquetas son redondeadas; el panel de la primera pantalla y la ta
 
 ### Navegación
 
-Barra fija con enlaces a secciones y control de tema. En móvil los elementos se distribuyen en varias filas en lugar de quedar recortados; una superficie sólida con contorno y sombra suaves la separa del contenido durante el desplazamiento. Los enlaces y el control comparten un acento de interacción: azul `#1e40af` en tema claro y azul `#93c5fd` en tema oscuro; el enlace de la sección activa usa el mismo acento. Los enlaces conservan un foco visible al navegar con teclado.
+Barra fija con enlaces a secciones y control de tema. En móvil los elementos se distribuyen en varias filas en lugar de quedar recortados. Una superficie sólida separa la barra del contenido en móvil y escritorio; en móvil conserva contorno y sombra suaves. Los enlaces y el control comparten un acento de interacción: azul `#1e40af` en tema claro y azul `#93c5fd` en tema oscuro; el enlace de la sección activa usa el mismo acento. Los enlaces conservan un foco visible al navegar con teclado.
 
 ### Experiencia
 
