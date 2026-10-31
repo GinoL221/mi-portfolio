@@ -33,7 +33,7 @@ Las fechas y textos secundarios usan neutros con contraste suficiente. Los estad
 
 ## Typography
 
-Onest Variable es la fuente principal, con `system-ui` y `sans-serif` como alternativas. El nombre y rol usan una jerarquía mayor que el texto descriptivo; el proyecto destacado emplea un título secundario y texto de apoyo.
+Onest Variable es la fuente principal, con `system-ui` y `sans-serif` como alternativas. El título visible es el nombre. El rol aparece una sola vez, debajo, con más peso que el texto descriptivo. El título de la pestaña conserva la barra. El proyecto destacado emplea un título secundario y texto de apoyo.
 
 ## Layout
 
@@ -45,13 +45,13 @@ El proyecto destacado usa una sombra suave y borde para separarse del fondo. Las
 
 ## Shapes
 
-La foto y las etiquetas son redondeadas; el panel de la primera pantalla y la tarjeta del proyecto tienen esquinas redondeadas. La conexión entre tecnologías y decisión técnica es una línea decorativa, oculta a tecnologías de asistencia.
+La foto y las etiquetas son redondeadas; el panel de la primera pantalla y la tarjeta del proyecto tienen esquinas redondeadas. Las tecnologías y la decisión técnica se separan con el borde de esa sección, sin una línea colgante.
 
 ## Components
 
 ### Navegación
 
-Barra fija con enlaces a secciones y control de tema. En móvil los elementos se distribuyen en varias filas en lugar de quedar recortados. Una superficie sólida separa la barra del contenido en móvil y escritorio; en móvil conserva contorno y sombra suaves. Los enlaces y el control comparten un acento de interacción: azul `#1e40af` en tema claro y azul `#93c5fd` en tema oscuro; el enlace de la sección activa usa el mismo acento. Los enlaces conservan un foco visible al navegar con teclado.
+Barra fija con enlaces en el mismo orden de lectura de la página: Inicio, Proyectos, Experiencia, Educación, Habilidades, Certificaciones y Sobre mí. Contacto queda al final porque abre el correo y no es una sección. Incluye el control de tema. En móvil los elementos se distribuyen en varias filas en lugar de quedar recortados. Una superficie sólida separa la barra del contenido en móvil y escritorio; en móvil conserva contorno y sombra suaves. Los enlaces y el control comparten un acento de interacción: azul `#1e40af` en tema claro y azul `#93c5fd` en tema oscuro; el enlace de la sección activa usa el mismo acento. Los enlaces conservan un foco visible al navegar con teclado. Si el sistema pide menos movimiento, la barra no cambia de forma al desplazar y las transiciones decorativas quedan quietas.
 
 ### Experiencia
 
@@ -71,7 +71,7 @@ Los fragmentos destacados usan el acento azul (`#1e40af` en claro y `#93c5fd` en
 
 ### Proyecto destacado
 
-Presenta el nombre, una descripción, tecnologías, una decisión técnica y un enlace al caso de estudio. Se muestra si el proyecto existe, no está en borrador y tiene una descripción breve del caso. El enlace destacado y los botones de proyectos usan un contorno de foco de 2 px, separado 2 px, azul `#1e40af` en claro y `#93c5fd` en oscuro.
+En la lista, el caso con decisión técnica conserva la presentación completa. Los demás proyectos quedan en un grupo secundario, sin captura, para no competir con esa evidencia. El destacado presenta el nombre, una descripción, tecnologías, una decisión técnica y un enlace al caso de estudio. Se muestra si el proyecto existe, no está en borrador y tiene una descripción breve del caso. El enlace destacado y los botones de proyectos usan un contorno de foco de 2 px, separado 2 px, azul `#1e40af` en claro y `#93c5fd` en oscuro. Esos controles, las pastillas de contacto y los enlaces sueltos del pie miden al menos 44 px. El nombre dentro de la frase de copyright queda en línea.
 
 ### Acciones de retorno
 

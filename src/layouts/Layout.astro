@@ -92,6 +92,19 @@ const { title, description } = Astro.props;
       html {
         scroll-behavior: auto;
       }
+
+      #header-nav {
+        animation: none;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
 
     #header-nav {

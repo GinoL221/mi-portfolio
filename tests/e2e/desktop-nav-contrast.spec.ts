@@ -15,7 +15,7 @@ for (const theme of ["light", "dark"] as const) {
       return canvas.getImageData(0, 0, 1, 1).data[3];
     })).toBe(255);
     const controls = navigation.locator("a, button");
-    await expect(controls).toHaveCount(7);
+    await expect(controls).toHaveCount(9);
     for (const control of await controls.all()) {
       await expect(control).toBeVisible();
       const ratio = await control.evaluate((element) => {

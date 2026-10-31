@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 test("navigation and its controls fit in the viewport", async ({ page }) => {
   const nav = page.locator("#header-nav");
   const controls = nav.locator("a, button");
-  await expect(controls).toHaveCount(7);
+  await expect(controls).toHaveCount(9);
   const viewport = page.viewportSize();
   expect(viewport).not.toBeNull();
   for (const control of await controls.all()) {
@@ -39,7 +39,7 @@ test("mobile navigation keeps its theme-aware backdrop while scrolling", async (
     await page.evaluate(() => window.scrollTo(0, 0));
 
     const controls = nav.locator("a, button");
-    await expect(controls).toHaveCount(7);
+    await expect(controls).toHaveCount(9);
     for (const control of await controls.all()) {
       await expect(control).toBeVisible();
       const box = await control.boundingBox();
@@ -183,7 +183,7 @@ test("the profile panel starts below the navigation", async ({ page }) => {
 
 test("keyboard navigation focuses a link and Enter opens its section", async ({ page }) => {
   const projects = page.locator('#header-nav a[href="/#proyectos"]');
-  for (let i = 0; i < 4; i++) await page.keyboard.press("Tab");
+  for (let i = 0; i < 2; i++) await page.keyboard.press("Tab");
   await expect(projects).toBeFocused();
   expect(await projects.evaluate((element) => element.matches(":focus-visible"))).toBe(true);
   await page.keyboard.press("Enter");
